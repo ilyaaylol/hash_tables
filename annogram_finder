@@ -1,0 +1,10 @@
+masssive_str = ["eat", "tea", "tan", "ate", "nat", "bat"]
+def annogram_finder(massive_str):
+    hashMap_annogram = {}
+    for word in massive_str:
+        sort_word = ''.join(sorted(word))
+        if sort_word not in hashMap_annogram:
+            hashMap_annogram[sort_word] = []
+        hashMap_annogram[sort_word].append(word)
+    return list(hashMap_annogram.values())
+print(annogram_finder(masssive_str))
