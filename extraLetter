@@ -1,0 +1,14 @@
+def extraLetter(a: str, b: str) -> str:
+    hashMap_a = {}
+    for ch in a:
+        hashMap_a[ch] = hashMap_a.get(ch, 0) + 1
+    for ch in b:
+        if ch in hashMap_a:
+            hashMap_a[ch] -= 1
+            if hashMap_a[ch] == 0:
+                del hashMap_a[ch]
+        else:
+            return ch
+
+    return 'буква не найдена'
+print(extraLetter('asdasd', 'ddssaa'))
