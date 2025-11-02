@@ -1,0 +1,14 @@
+def binarySearchSqrt(target):
+    left = 0
+    right = target
+    while left <= right:
+        middle = (left + right) // 2
+        if middle**2 == target:
+            return middle
+
+        elif middle**2 < target:
+            left = middle + 1
+        else:
+            right = middle - 1
+    return right
+print(binarySearchSqrt(16))
