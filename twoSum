@@ -1,0 +1,9 @@
+def twoSum(data, target):
+    hashMap_data = {}
+    for i in range(len(data)):
+        hashMap_data[data[i]] = i
+    for i in range(len(data)):
+        diff = target - data[i]
+        if diff in hashMap_data:
+            return [i, hashMap_data[diff]]
+print(twoSum([1,  4, 5, 7, 10 , 11, 34], 17))
